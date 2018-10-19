@@ -13,6 +13,7 @@ def posts_list(request):
     context = {'posts': posts}
     return render(request, 'posts/posts_list.html', context)
 
+
 def posts_detail(request, slug):
     post = Posts.objects.get(slug=slug)
     context = {
