@@ -10,3 +10,16 @@
 - [ ] Ranking System for Comments - Upvote & Downvote
 - [ ] Ranking System for Users - Calculated using the previous 2
 - [ ] Deployment using AWS
+
+## Screenshots
+### Signup
+<img src="https://i.imgur.com/mpeyBeA.png">
+
+### Login
+<img src="https://i.imgur.com/LWggCmg.png">
+
+### Home
+<img src="https://i.imgur.com/zwcvdv1.png">
+
+### Detail
+<img src="https://i.imgur.com/Ddh2y42.png">
