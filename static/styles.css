@@ -12,6 +12,7 @@ h2, h3, h4, h5{
     font-weight: normal;
     margin: 0;
 }
+
 a, a:hover, a:visited{
     color: #000;
     text-decoration: none;
@@ -52,6 +53,7 @@ p {
     font-size: 20px;
     margin-left: 200px;
 }
+
 nav button{
     background: none;
     color: #000;
@@ -66,32 +68,6 @@ nav button{
     grid-gap: 50px;
     margin-left: auto;
     margin-right: auto;
-}
-
-.Meme{
-    padding: 10px;
-    border: 1px solid #000;
-    position: relative;
-    padding-bottom: 40px;
-       margin-left: auto;
-    margin-right: auto;
-}
-
-.Meme h2{
-    font-size: 2.0em;
-    border : 1px solid #000;
-    position: relative;
-    text-align:center;
-}
-
-.Meme .author{
-    padding: 10px;
-    background: #000;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    margin: 0;
-    color: #0f121f;
 }
 
 .site-form {
@@ -147,32 +123,126 @@ input[type=file],[type=submit]{
     cursor: pointer;
 }
 
-div.post-detail {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+/* new */
+.Meme .title{
+    font-size: 2.5vw;
+    font-weight: 700;
+    position: relative;
+    text-align:center;
 }
-div.comments {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-}
-div.add-comment {
 
-    background: #fff;
-    color: #000;
-    font-size: 20px;
+.Meme{
+    border: 1px solid #c5c8cb;
     border-radius: 4px;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+    overflow: auto;
+}
+
+.Meme img{
+    display: block;
+    margin: auto;
+    height: auto;
+    width: auto;
+    max-width: 100%;
+}
+
+.Meme .author{
+    color: #232323;
+    float: right;
+    font-size: 1.5vw;
+    font-weight: 700;
+    margin-bottom: 10px;
+    padding-right: 5px;
+}
+
+/* post_detail.html */
+
+.post-container{
+    margin-left: auto;
+    margin-right: auto;
+    height: 70%;
+    width: 70%;
+    overflow: auto;
+}
+
+.post-detail{
+    background: antiquewhite;
+    border: 1px solid #c5c8cb;
+    border-radius: 4px;
+}
+
+.post-detail-image img{
+    display: block;
+    margin: auto;
+    width: auto;
+    max-width: 100%;
+}
+
+.post-detail-title{
+    margin-bottom: 2vh;
+    border: 1px solid #c5c8cb;
+    border-radius: 4px;
+    font-size: 5vh;
+    text-align: center;
+}
+
+.post-detail-author{
+    margin-top: 2vh;
+    border: 1px solid #c5c8cb;
+    border-radius: 4px;
+    font-size: 3vh;
+    text-align: right;
+}
+
+
+/* comments */
+
+.post-comments{
+    padding: 2vh;
+    border: 1px solid antiquewhite;
+    border-radius: 2px;
+    margin-top: 2vh;
+}
+
+.single-comment{
+    margin-bottom: 4vh;
+}
+.comments-title{
+    margin-top: 4vh;
+    font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+    margin-bottom: 2vh;
+}
+
+.comment-content{
+    margin-top: 2vh;
+    display: inline-block;
+    background-color: antiquewhite;
+    width:auto;
+    height:auto;
+    box-shadow:1vh 1vh 1vh grey;
+    margin-bottom: 2vh;
+    border-radius: 2vh;
+}
+
+.add-comment {
+    margin-top: 4vh;
+    background: #fff;
+    color: #000;
+    border-radius: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
 }
 
 .add-comment input[type=text]{
-    width: 400px;
-    line-height: 5;
-    font-size: 20px;
+    width: 80%;
+    line-height: 3;
+    font-size: 2vh;
     cursor: pointer;
+}
+
+.add-comment input[type=submit]{
+    font-size: 3vh;
 }

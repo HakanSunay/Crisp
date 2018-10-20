@@ -1,34 +1,31 @@
 {% extends 'base_layout.html' %}
 
 {% block content %}
-<div class="post-detail">
-    <div class="post">
-         <h2>{{ post.title }}</h2>
-        <br>
-        <img src="{{ post.thumb.url }}" />
-        <br>
-        <h3> Added by <a href="{% url 'accounts:login'  %}"> {{ post.author.username }} </a></h3>
+    <div class="post-container">
+        <div class="post-detail">
+            <div class="post-detail-title">{{ post.title }}</div>
+            <div class="post-detail-image"><img src="{{ post.thumb.url }}"></div>
+            <div class="post-detail-author"> Added by <a href="{% url 'accounts:login'  %}"> {{ post.author.username }} </a></div>
+        </div>
+        {% if user.is_authenticated %}
+        <div class="add-comment">
+                 <form class="comment-form" action="{% url 'posts:detail' post.slug %}" method="post">
+                    {% csrf_token %}
+                    {{ form }}
+                     <input type="text" name="content" required>
+                     <input type="submit" value="Have a say!">
+                </form>
+        </div>
+        {% endif %}
+        <div class="comments-title">Comments</div>
+        <div class="post-comments">
+            {% for comment in comments %}
+                <div class="single-comment">
+                    <div class="comment-author">{{ comment.author.username }} said:</div>
+                    <div class="comment-content">{{ comment.content }}</div>
+                    <div class="comment-date">{{ comment.date | timesince }} ago</div>
+                </div>
+            {% endfor %}
+        </div>
     </div>
-</div>
-
-    <div class="comments">
-     <br/>
-    <h2> Comments </h2>
-    <br>
-    {% for comment in comments %}
-        <h3>
-            {{ comment.content }} <br> by: {{ comment.author.username }} | {{ comment.date | timesince }} ago
-        </h3>
-    {% endfor %}
-    </div>
-    {% if user.is_authenticated %}
-    <div class="add-comment">
-         <form class="comment-form" action="{% url 'posts:detail' post.slug %}" method="post">
-            {% csrf_token %}
-            {{ form }}
-             <input type="text" name="content">
-            <input type="submit" value="Submit">
-        </form>
-    </div>
-    {% endif %}
 {% endblock %}
