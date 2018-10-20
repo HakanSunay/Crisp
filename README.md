@@ -1,6 +1,6 @@
 # Crisp - Milky Way's Entertainer <img src="https://i.imgur.com/GN9nIWf.png" height="120">
 
-## A 9GAG-like web application for my personal Facebook page - Crisp
+## A 9GAG-like web application for my personal Facebook page - Crisp, using Django
 
 
 ## Future Plans
@@ -9,3 +9,4 @@
 - [ ] Ranking System for Posts - Upvote & Downvote
 - [ ] Ranking System for Comments - Upvote & Downvote
 - [ ] Ranking System for Users - Calculated using the previous 2
+- [ ] Deployment using AWS
