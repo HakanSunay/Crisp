@@ -1,4 +1,4 @@
-# Crisp - Milky Way's Entertainer <img src="https://i.imgur.com/GN9nIWf.png" height="120">
+# Crisp - Milky Way's Entertainer <img src="https://raw.githubusercontent.com/HakanSunay/Crisp/master/static/logo.png" height="120">
 
 ## A 9GAG-like web application for my personal Facebook page - Crisp, using Django
 
