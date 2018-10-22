@@ -1,0 +1,15 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+    <h1>Profile Information</h1>
+    <div class="Memes">
+        {% for i in posts %}
+            <div class="Meme">
+                <div class="title"><a href="{% url 'posts:detail' i.slug %}">{{ i.title }}</a></div>
+                <img src="{{ i.thumb.url }}">
+                <div class="date">added on {{i.date}}</div>
+                <div class="score">Current score {{ i.score }}</div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
