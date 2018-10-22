@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
+from posts.models import Posts
 
 
 def signup_view(request):
@@ -34,3 +35,15 @@ def logout_view(request):
     if request.method == 'POST':
             logout(request)
             return redirect('posts:list')
+
+
+def user_view(request, username):
+    if request.method == "GET":
+        # check name mangling for author__username
+        # initially used .get, but that is intended for a single
+        # object only, so i had to change it to .filter =)
+        user_posts = Posts.objects.filter(author__username=username)
+        context = {
+            'posts': user_posts.values,
+        }
+        return render(request, 'accounts/user.html',context=context)

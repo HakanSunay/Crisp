@@ -5,11 +5,13 @@
 
 ## Future Plans
 - [ ] Using Facebook's Graph API to automatically upload content from the page to the site and the other way around.
-- [ ] Users Page to display every user's posts
-- [ ] Ranking System for Posts - Upvote & Downvote
-- [ ] Ranking System for Comments - Upvote & Downvote
-- [ ] Ranking System for Users - Calculated using the previous 2
-- [ ] Deployment using AWS
+- [ ] Users Page to display every user's posts.
+- [ ] Ranking System for Posts - Upvote & Downvote. // **Interactive JS**
+- [ ] Ranking System for Comments - Upvote & Downvote.
+- [ ] Ranking System for Users - Calculated using the previous 2.
+- [ ] Automate Slug Generation when Uploading Memes.
+- [ ] Ditch Django User Model, Create **Own**.
+- [ ] Deployment using AWS.
 
 ## Screenshots
 ### Signup

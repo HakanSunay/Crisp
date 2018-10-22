@@ -16,7 +16,7 @@
                         <li>
                             <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
                                 {% csrf_token %}
-                                {{ user.username}} <button type="submit"> Logout</button>
+                                <a href="{% url "accounts:user" user.username %}">{{ user.username}}</a> | <button type="submit">Logout</button>
                             </form>
                         </li>
                         <li><a href="{% url 'posts:create' %}" class="highlight">New Meme</a></li>
