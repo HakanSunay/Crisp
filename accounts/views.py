@@ -44,6 +44,6 @@ def user_view(request, username):
         # object only, so i had to change it to .filter =)
         user_posts = Posts.objects.filter(author__username=username)
         context = {
-            'posts': user_posts.values,
+            'posts': user_posts.all(),
         }
         return render(request, 'accounts/user.html',context=context)
