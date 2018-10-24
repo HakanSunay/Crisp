@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from .models import Posts
+from .models import Post
 from . import forms
 from comments import forms as comment_forms
 from comments.models import Comments
@@ -9,13 +9,13 @@ from comments.models import Comments
 
 
 def posts_list(request):
-    posts = Posts.objects.all()
+    posts = Post.objects.all()
     context = {'posts': posts}
     return render(request, 'posts/posts_list.html', context)
 
 
 def posts_detail(request, slug):
-    post = Posts.objects.get(slug=slug)
+    post = Post.objects.get(slug=slug)
     context = {
         'post': post,
         'comments': post.comments_set.all(),

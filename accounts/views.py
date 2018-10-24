@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
-from posts.models import Posts
+from posts.models import Post
 
 
 def signup_view(request):
@@ -42,7 +42,7 @@ def user_view(request, username):
         # check name mangling for author__username
         # initially used .get, but that is intended for a single
         # object only, so i had to change it to .filter =)
-        user_posts = Posts.objects.filter(author__username=username)
+        user_posts = Post.objects.filter(author__username=username)
         context = {
             'posts': user_posts.all(),
         }
