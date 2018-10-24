@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.utils.text import slugify
 
 
-class Post(models.Model):
+class Posts(models.Model):
     title = models.CharField(max_length=100)
     slug = models.SlugField(unique=True)
     thumb = models.ImageField(default='default.png', blank=True)
@@ -18,7 +18,7 @@ class Post(models.Model):
         slug = slugify(self.title)
         unique_slug = slug
         num = 1
-        while Post.objects.filter(slug=unique_slug).exists():
+        while Posts.objects.filter(slug=unique_slug).exists():
             unique_slug = '{}-{}'.format(slug, num)
             num += 1
         return unique_slug
@@ -29,4 +29,4 @@ class Post(models.Model):
         super().save(*args, **kwargs)
 
     class Meta:
-        verbose_name_plural = 'Post'
+        verbose_name_plural = 'Posts'

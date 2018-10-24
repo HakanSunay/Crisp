@@ -2,7 +2,7 @@ from django import forms
 from . import models
 
 
-class CreatePost(forms.ModelForm):
+class CreatePosts(forms.ModelForm):
     class Meta:
-        model = models.Post
+        model = models.Posts
         fields = ['title', 'thumb']
